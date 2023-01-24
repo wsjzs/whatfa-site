@@ -1,0 +1,22 @@
+body {
+  height: 100%;
+  /* font-family: 'Helvetica Neue', 'Luxi Sans', 'DejaVu Sans', 'Segoe UI', 'Hiragino Sans GB', 'Microsoft Yahei',
+    sans-serif; */
+  /* font-family: Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', STXihei, 'Microsoft YaHei',
+    SimHei, 'WenQuanYi Micro Hei'; */
+  font-family: system-ui, -apple-system, PingFang SC, 'Microsoft YaHei', Segoe UI, Roboto, Helvetica, noto sans sc,
+    hiragino sans gb, 'sans-serif', Apple Color Emoji, Segoe UI Emoji, Not Color emoji;
+  /* font-size: 14px; */
+  @apply text-sm;
+  letter-spacing: 0.1rem;
+}
+
+textarea,
+input {
+  outline: none;
+  border: none;
+}
+input:focus,
+textarea:focus {
+  @apply focus: ring-transparent;
+}
