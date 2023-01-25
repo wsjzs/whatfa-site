@@ -1,25 +1,27 @@
 <template>
-  <main class="main">
-    <Head>
-      <Title>{{ title }}</Title>
-      <Meta name="description" :content="description" />
-      <Meta
-        name="viewport"
-        content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover"
-      ></Meta>
-      <!-- <Meta name="keywords" :content="keywords"></Meta> -->
-      <!-- <Style type="text/css" children="body { background-color: green; }"></Style> -->
-    </Head>
-    <!-- <TopBar>
+  <NConfigProvider inline-theme-disabled>
+    <main class="main">
+      <Head>
+        <Title>{{ title }}</Title>
+        <Meta name="description" :content="description" />
+        <Meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover"
+        ></Meta>
+        <!-- <Meta name="keywords" :content="keywords"></Meta> -->
+        <!-- <Style type="text/css" children="body { background-color: green; }"></Style> -->
+      </Head>
+      <!-- <TopBar>
       <div>I'd inserted into the top</div>
     </TopBar> -->
-    <div class="container-main">
-      <slot></slot>
-    </div>
-    <div class="container-right">
-      <slot name="right"></slot>
-    </div>
-  </main>
+      <div class="container-main">
+        <slot></slot>
+      </div>
+      <div class="container-right">
+        <slot name="right"></slot>
+      </div>
+    </main>
+  </NConfigProvider>
   <!-- <n-config-provider :theme="theme"> -->
   <!-- <n-theme-editor> -->
 
@@ -28,12 +30,13 @@
   <!-- </n-config-provider> -->
 </template>
 <script lang="ts">
-// import { NConfigProvider, NCard, NSpace, NGlobalStyle, GlobalTheme } from 'naive-ui'
+// import { NConfigProvider } from 'naive-ui'
 // import type { GlobalTheme } from 'naive-ui'
 // import TopBar from './common/TopBar.vue'
 export default defineComponent({
   components: {
     // TopBar
+    // NConfigProvider,
   },
   props: {
     // 标题
