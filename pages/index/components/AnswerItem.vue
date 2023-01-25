@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="answer-item">
     <div class="title">是不是出了社会就再也不会有真正的爱情了？</div>
     <div class="content">
       王尔嘚： 真爱这种东西，只存在于两种可能性之中——
@@ -10,6 +10,15 @@
 
 <script setup></script>
 <style scoped lang="stylus">
-.content
+// .content
     // color red
+
+.answer-item
+  padding 20px
+.title
+    color #121212
+    font-size 18px
+    font-synthesis style
+    font-weight 600
+    line-height 1.6
 </style>
