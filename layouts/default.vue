@@ -1,68 +1,54 @@
 <template>
-  <main class="main">
-    <Head>
-      <Title>{{ title }}</Title>
-      <Meta name="description" :content="description" />
-      <Meta
-        name="viewport"
-        content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover"
-      ></Meta>
-      <!-- <Meta name="keywords" :content="keywords"></Meta> -->
-      <!-- <Style type="text/css" children="body { background-color: green; }"></Style> -->
-    </Head>
-    <!-- <TopBar>
-        <div>I'd inserted into the top</div>
-      </TopBar> -->
-    <div class="container-main">
-      <div class="container-main--left">
-        <slot></slot>
+  <NConfigProvider inline-theme-disabled :theme-overrides="themeOverrides">
+    <main class="main">
+      <Head>
+        <Title>{{ title }}</Title>
+        <Meta name="description" :content="description" />
+        <Meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover"
+        ></Meta>
+        <!-- <Meta name="keywords" :content="keywords"></Meta> -->
+        <!-- <Style type="text/css" children="body { background-color: green; }"></Style> -->
+      </Head>
+      <!-- <TopBar>
+      <div>I'd inserted into the top</div>
+    </TopBar> -->
+      <div class="container-main">
+        <div class="container-main--left">
+          <slot></slot>
+        </div>
+        <div class="container-main--right">
+          <slot name="right"></slot>
+        </div>
       </div>
-      <div class="container-main--right">
-        <slot name="right"></slot>
-      </div>
-    </div>
 
-    <!-- <div class="container-right"> -->
+      <!-- <div class="container-right"> -->
 
-    <!-- </div> -->
-  </main>
-  <!-- <n-config-provider :theme="theme"> -->
-  <!-- <n-theme-editor> -->
-
-  <!-- <n-global-style /> -->
-  <!-- </n-theme-editor> -->
-  <!-- </n-config-provider> -->
+      <!-- </div> -->
+    </main>
+  </NConfigProvider>
 </template>
-<script lang="ts">
-// import { NConfigProvider, NCard, NSpace, NGlobalStyle, GlobalTheme } from 'naive-ui'
-// import type { GlobalTheme } from 'naive-ui'
-// import TopBar from './common/TopBar.vue'
-export default defineComponent({
-  components: {
-    // TopBar
+<script lang="ts" setup>
+import { NConfigProvider, GlobalThemeOverrides } from 'naive-ui'
+
+interface IProps {
+  title?: string
+  description?: string
+}
+defineProps<IProps>()
+const themeOverrides: GlobalThemeOverrides = {
+  common: {
+    primaryColor: '#48444138',
+    primaryColorHover: '#59788082',
   },
-  props: {
-    // 标题
-    title: {
-      type: String,
-      default: 'whatfa',
-    },
-    description: {
-      type: String,
-      default: 'whatfa includes a large of quesions which you want',
-    },
+  // Button: {
+  //   textColor: '#FF0000',
+  // },
+  Pagination: {
+    itemPaddingMedium: '0px',
   },
-  setup() {
-    // const theme = ref<GlobalTheme | null>(null)
-    // theme.value = darkTheme
-    return {
-      // theme,
-      // NCard,
-      // NSpace,
-      // NGlobalStyle,
-    }
-  },
-})
+}
 </script>
 
 <style>

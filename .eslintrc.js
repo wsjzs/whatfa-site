@@ -15,6 +15,7 @@ module.exports = {
     // 允许使用console
     // 'no-console': 0,
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+    'vue/no-v-model-argument': 'off',
     // 解决eslint 与 prettier冲突
     'prettier/prettier': [
       'error',

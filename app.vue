@@ -12,9 +12,7 @@
     <!-- <AppLayout> -->
     <NuxtLayout>
       <NuxtPage></NuxtPage>
-      <template #right>
-        <div>right</div>
-      </template>
+      <template #right></template>
     </NuxtLayout>
 
     <!-- </AppLayout> -->
