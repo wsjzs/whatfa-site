@@ -2,7 +2,7 @@
   <div class="answer-list">
     <div class="list-container">
       <div v-for="(_, index) in data" :key="index" class="wrap-answer">
-        <AnswerItem />
+        <AnswerItem  :id="`${index}`"/>
       </div>
     </div>
     <div class="answer-list--footer">
@@ -26,7 +26,7 @@ interface IProps {
   currentPage: number
 }
 const props = defineProps<IProps>()
-const data = [1, 2, 3]
+const data:number[] = [1, 2, 3]
 const page = ref(props.currentPage || 1)
 
 // const pageState = reactive({

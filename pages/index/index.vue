@@ -1,13 +1,20 @@
 <template>
   <div class="main-inner card">
-    <AnswerList :current-page="currentPage"></AnswerList>
+    <AnswerList :current-page="currentPage" :refresh="refresh"></AnswerList>
+    notes{{ notes }}
   </div>
 </template>
 <script lang="ts" setup>
 import AnswerList from './components/AnswerList.vue'
 const route = useRoute()
-
+const { data: notes ,refresh} = await useFetch('/api/notes',{ baseURL: 'http://localhost:7001'})
 const currentPage = computed(() => Number(route.query.page || 1))
+watch(route,()=>{
+  refresh()
+})
+// onMounted(() => {
+//   refresh()
+// })
 </script>
 
 <style scoped lang="stylus">

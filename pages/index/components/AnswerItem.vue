@@ -1,19 +1,32 @@
 <template>
-  <div class="answer-item">
-    <div class="title">是不是出了社会就再也不会有真正的爱情了？</div>
+  <div class="answer-item" @click="handleGoNote(id)">
+    <div class="title">test title</div>
     <div class="content">
-      王尔嘚： 真爱这种东西，只存在于两种可能性之中——
-      一种是学生时代，两个人都没啥钱，傻不垃圾的，但是仅仅凭借着互相的欣赏和喜欢，就可以在一起。这种感情虽…
+      I get test
+      It's test…
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+import {useRouter} from 'vue-router'
+
+interface IProps{
+  id:string
+}
+defineProps<IProps>()
+const router = useRouter()
+  const handleGoNote=(id:string)=>{
+    // console.log(id)
+    router.push({path:`/note/${id}`})
+  }
+</script>
 <style scoped lang="stylus">
 // .content
     // color red
 
 .answer-item
+  cursor pointer
   padding 20px
 .title
     color #121212
