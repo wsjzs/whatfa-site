@@ -11,7 +11,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "prod": "npm run build && node .output/server/index.mjs "
+    "start": "npm run build && node .output/server/index.mjs "
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.2",
