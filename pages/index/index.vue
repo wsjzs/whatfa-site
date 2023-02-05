@@ -1,7 +1,6 @@
 <template>
   <div class="main-inner card">
     <AnswerList :current-page="currentPage" :refresh="refresh"></AnswerList>
-    notes{{ notes }}
   </div>
 </template>
 <script lang="ts" setup>
@@ -12,9 +11,6 @@ const currentPage = computed(() => Number(route.query.page || 1))
 watch(route,()=>{
   refresh()
 })
-// onMounted(() => {
-//   refresh()
-// })
 </script>
 
 <style scoped lang="stylus">

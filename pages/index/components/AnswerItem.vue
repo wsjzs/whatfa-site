@@ -1,6 +1,6 @@
 <template>
-  <div class="answer-item" @click="handleGoNote(id)">
-    <div class="title">test title</div>
+  <div class="answer-item">
+    <NuxtLink :to="`/note/${id}`" target="_blank" class="link title">test title</NuxtLink>
     <div class="content">
       I get test
       It's test…
@@ -9,24 +9,20 @@
 </template>
 
 <script setup lang="ts">
-import {useRouter} from 'vue-router'
 
 interface IProps{
   id:string
 }
 defineProps<IProps>()
-const router = useRouter()
-  const handleGoNote=(id:string)=>{
-    // console.log(id)
-    router.push({path:`/note/${id}`})
-  }
 </script>
 <style scoped lang="stylus">
-// .content
-    // color red
-
+.link
+  color inherit
+  text-decoration none
+  &:hover
+    text-decoration underline
 .answer-item
-  cursor pointer
+  // cursor pointer
   padding 20px
 .title
     color #121212
